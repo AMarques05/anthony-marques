@@ -1,0 +1,588 @@
+/* Reset and Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a2e;
+    color: #eee;
+}
+
+/* Fade-in animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navigation Styles */
+.navigation {
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    color: white;
+    padding: 20px 30px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navigation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
+}
+
+.navigation:hover::before {
+    left: 100%;
+}
+
+.navigation h1 {
+    font-family: 'Audiowide', cursive;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+}
+
+.nav-links a:hover {
+    background: linear-gradient(45deg, #e74c3c, #f39c12);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(45deg, #e74c3c, #f39c12) 1;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+/* Hero Section Styles */
+
+.hero {
+    background-image: url('../images/galaxy-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero h2 {
+    font-family: 'Audiowide', cursive;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Projects Section Styles */
+.projects {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0f3460 0%, #533483 100%);
+    text-align: center;
+    color: white;
+    position: relative;
+    animation: fadeInLeft 1s ease-out 0.6s both;
+}
+
+.projects h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    grid-column: 1 / -1;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-item {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-item:hover {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.2) 0%, rgba(243, 156, 18, 0.2) 100%);
+    transform: translateY(-5px);
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #e74c3c, #f39c12) 1;
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+}
+
+.project-item img {
+    width: 100%;
+    max-width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project-item h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: white;
+}
+
+.project-item p {
+    text-align: center;
+    margin: 10px 0;
+    flex-grow: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin: 15px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-tech i {
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.project-tech .devicon-html5-plain {
+    color: #e34f26;
+}
+
+.project-tech .devicon-css3-plain {
+    color: #1572b6;
+}
+
+.project-tech .devicon-javascript-plain {
+    color: #f7df1e;
+}
+
+.project-tech .devicon-java-plain {
+    color: #ed8b00;
+}
+
+.project-tech .devicon-nodejs-plain,
+.project-tech .devicon-nodejs-plain-wordmark {
+    color: #339933;
+}
+
+.project-tech .devicon-react-original {
+    color: #61dafb;
+}
+
+.project-tech .devicon-python-plain {
+    color: #3776ab;
+}
+
+.project-tech .devicon-git-plain {
+    color: #f05032;
+}
+
+.project-tech .devicon-npm-original-wordmark {
+    color: #cb3837;
+}
+
+.project-tech .devicon-postgresql-plain {
+    color: #336791;
+}
+
+.project-tech .devicon-supabase-plain {
+    color: #3ecf8e;
+}
+
+.project-tech .ejs-icon {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    color: #a6d95a;
+}
+
+.project-item a {
+    background: linear-gradient(45deg, #e74c3c, #f39c12);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.project-item a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+@media (max-width: 768px) {
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(231, 76, 60, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Skills Section Styles */
+.skills {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #533483 0%, #16213e 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInRight 1s ease-out 0.9s both;
+}
+
+.skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(243, 156, 18, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(155, 89, 182, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.skills h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    animation: fadeInUp 0.8s ease-out 1.2s both;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: auto;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    padding: 20px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease-out calc(1.5s + var(--delay, 0s)) both;
+}
+
+/* Stagger animation for skills */
+.skill:nth-child(1) { --delay: 0s; }
+.skill:nth-child(2) { --delay: 0.1s; }
+.skill:nth-child(3) { --delay: 0.2s; }
+.skill:nth-child(4) { --delay: 0.3s; }
+.skill:nth-child(5) { --delay: 0.4s; }
+.skill:nth-child(6) { --delay: 0.5s; }
+.skill:nth-child(7) { --delay: 0.6s; }
+.skill:nth-child(8) { --delay: 0.7s; }
+.skill:nth-child(9) { --delay: 0.8s; }
+.skill:nth-child(10) { --delay: 0.9s; }
+.skill:nth-child(11) { --delay: 1s; }
+.skill:nth-child(12) { --delay: 1.1s; }
+
+.skill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.3s;
+}
+
+.skill:hover::before {
+    left: 100%;
+}
+
+.skill:hover {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.2) 0%, rgba(243, 156, 18, 0.2) 100%);
+    transform: translateY(-5px);
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #e74c3c, #f39c12) 1;
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+}
+
+.skills-list i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.skill:hover i {
+    transform: scale(1.1);
+}
+
+/* Individual skill icon colors on hover */
+.skill:hover .devicon-html5-plain {
+    color: #e34f26;
+}
+
+.skill:hover .devicon-css3-plain {
+    color: #1572b6;
+}
+
+.skill:hover .devicon-javascript-plain {
+    color: #f7df1e;
+}
+
+.skill:hover .devicon-java-plain {
+    color: #ed8b00;
+}
+
+.skill:hover .devicon-python-plain {
+    color: #3776ab;
+}
+
+.skill:hover .devicon-react-original {
+    color: #61dafb;
+}
+
+.skill:hover .devicon-nodejs-plain,
+.skill:hover .devicon-nodejs-plain-wordmark {
+    color: #339933;
+}
+
+.skill:hover .devicon-c-plain {
+    color: #a8b9cc;
+}
+
+.skill:hover .devicon-npm-original-wordmark {
+    color: #cb3837;
+}
+
+.skill:hover .devicon-git-plain {
+    color: #f05032;
+}
+
+.skill:hover .devicon-github-original {
+    color: #181717;
+}
+
+.skill:hover .devicon-bootstrap-plain {
+    color: #7952b3;
+}
+
+.skill:hover .devicon-mysql-plain {
+    color: #4479a1;
+}
+
+.skill:hover .devicon-postgresql-plain {
+    color: #336791;
+}
+
+.skill:hover .devicon-supabase-plain {
+    color: #3ecf8e;
+}
+
+.skill:hover .devicon-cplusplus-plain {
+    color: #00599c;
+}
+
+/* Custom EJS icon */
+.ejs-icon {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+    color: #ffffff;
+}
+
+.skill:hover .ejs-icon {
+    color: #a6d95a;
+    transform: scale(1.1);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+    .skills-list {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 30px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-out 2.5s both;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(231, 76, 60, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    gap: 20px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    background: linear-gradient(45deg, #e74c3c, #f39c12);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}
+
+
+
