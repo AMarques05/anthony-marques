@@ -219,6 +219,12 @@ body {
     margin-bottom: 0;
 }
 
+.project-item img[src*="studyspaces"] {
+    object-fit: contain;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
 .project-item h3 {
     font-size: 1.5rem;
     margin: 10px 0;
@@ -541,6 +547,57 @@ body {
 .skill:hover .ejs-icon {
     color: #a6d95a;
     transform: scale(1.1);
+}
+
+/* Custom Badge Styles for Convex, Gemini, etc */
+.custom-badge {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.3), rgba(243, 156, 18, 0.3));
+    color: #ffffff;
+    border: 1px solid rgba(243, 156, 18, 0.5);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.project-tech .custom-badge {
+    font-size: 0.85rem;
+    padding: 3px 6px;
+}
+
+.skill:hover .custom-badge {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.6), rgba(243, 156, 18, 0.6));
+    border-color: rgba(243, 156, 18, 0.8);
+    transform: scale(1.05);
+}
+
+/* SVG Icon Styles */
+.svg-icon {
+    height: 1.2rem;
+    width: auto;
+    transition: all 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+.project-tech .svg-icon {
+    height: 2rem;
+    font-size: 2rem;
+}
+
+.svg-skill-icon {
+    height: 3rem;
+    width: auto;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+.skill:hover .svg-icon,
+.skill:hover .svg-skill-icon {
+    transform: scale(1.1);
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(231, 76, 60, 0.5));
 }
 
 /* Responsive design for smaller screens */
